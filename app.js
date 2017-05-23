@@ -2,6 +2,10 @@
 
 const gamePieces = targetClassName('game-piece');
 
-const randomIcons = buildRandomArray(allCodes, 6, []);
+const recursiveIcons = recursiveRandomIcons(allCodes, 12);
+console.log(recursiveIcons);
 
-printInnerHTML(gamePieces, randomIcons, 0);
+
+printInnerHTML(gamePieces, recursiveIcons, 0)
+
+

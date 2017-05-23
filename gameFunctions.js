@@ -1,19 +1,23 @@
 "use strict";
 
-const targetClassName = target => document.getElementsByClassName(target)
+const targetClassName = target => document.getElementsByClassName(target);
 
 const returnRandomNum = num => Math.floor(Math.random()*num);
 
-const buildRandomArray = function (arr, outputLength, outputArr) {
-    let randomReturn = returnRandomNum(arr.length);
-    outputArr.push(arr[randomReturn]);
-    if (outputLength === 0){
-        console.log(outputArr);
-        return outputArr;
-    } else {
-        outputLength--;
-        buildRandomArray(arr, outputLength, outputArr);
+const recursiveRandomIcons = function(arr, length){
+    let outputArray = [];
+
+    function pickIcons(arr, length, output){
+        if (length === 0){
+            return output;
+        }
+        output.push(arr[Math.floor(Math.random()*arr.length)]);
+        length--;
+        return pickIcons(arr, length, output);
     }
+
+    return pickIcons(arr, length, outputArray);
+
 }
 
  const printInnerHTML = (elements, contentArr, start) => {
@@ -25,4 +29,5 @@ const buildRandomArray = function (arr, outputLength, outputArr) {
          printInnerHTML(elements, contentArr, start);
      }
  }
+
 
