@@ -1,3 +1,7 @@
+"use strict";
+
 const gamePieces = targetClassName('game-piece');
 
-printInnerHTML(gamePieces, 0, gamePieces.length);
+const randomIcons = buildRandomArray(allCodes, 6, []);
+
+printInnerHTML(gamePieces, randomIcons, 0);
