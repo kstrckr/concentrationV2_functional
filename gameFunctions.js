@@ -41,15 +41,25 @@ const pairAndShuffle = function(arr){
      }
  }
 
-const matchCheck = function(){
-    let selectedPieces = document.querySelectorAll('[data-status="selected"]')
-
+const matchCheck = function(clickTarget){
+    let selectedPieces = document.querySelectorAll('[data-status="selected"]');
+    console.log(selectedPieces);
     if (selectedPieces.length < 2){
-        return
-    } else if (selectedPieces.length === 2) {
-        if (selectedPieces[0].dataset.icon === selectedPieces[1].dataset.icon){
-            alert("Match!");
+        return;
+    } else if (selectedPieces.length === 2){
+        if (selectedPieces[0].dataset.icon === selectedPieces[1].dataset.icon) {
+            console.log("Match!");
+            selectedPieces.forEach(function(element){
+                element.dataset.status = "matched";
+            })
         }
-    } 
+    } else if (selectedPieces.length > 2) {
+        selectedPieces.forEach(function(element){
+            console.log(element);
+            element.firstChild.style.visibility = "hidden";
+            element.dataset.status = "unselected";
+        });
+        clickTarget.firstChild.style.visibility = "visible";
+        clickTarget.dataset.status = "selected";
+    }
 }
-

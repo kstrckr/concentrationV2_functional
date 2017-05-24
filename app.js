@@ -18,7 +18,7 @@ document.getElementById("game-board").addEventListener('click', function(e){
     if (e.target.className === "game-piece fa fa-5x"){
     e.target.firstChild.style.visibility = "visible"
     e.target.dataset.status = "selected"
-    matchCheck();
+    matchCheck(e.target);
     } else {
         return null;
     }
