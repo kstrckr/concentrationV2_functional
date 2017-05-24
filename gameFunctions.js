@@ -1,6 +1,6 @@
 "use strict";
 
-const targetClassName = target => document.getElementsByClassName(target);
+const returnCardElements = target => document.getElementsByClassName(target);
 
 const returnRandomNum = num => Math.floor(Math.random()*num);
 

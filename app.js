@@ -1,11 +1,11 @@
 "use strict";
 
-const gamePieces = targetClassName('game-piece');
+const gamePieces = returnCardElements('game-piece');
 
-const recursiveIcons = recursiveRandomIcons(allCodes, 12);
-console.log(recursiveIcons);
+const selectedIcons = recursiveRandomIcons(allCodes, 12);
+console.log(selectedIcons);
 
 
-printInnerHTML(gamePieces, recursiveIcons, 0)
+printInnerHTML(gamePieces, selectedIcons, 0)
 
 
