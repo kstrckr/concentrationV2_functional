@@ -1,11 +1,14 @@
 "use strict";
 
-const gamePieces = returnCardElements('game-piece');
-
-const selectedIcons = recursiveRandomIcons(allCodes, 12);
-console.log(selectedIcons);
 
 
-printInnerHTML(gamePieces, selectedIcons, 0)
+
+
+
+
+//console.log(shuffledIconPairs);
+
+
+printInnerHTML(returnCardElements('game-piece'), pairAndShuffle(returnRandomIcons(allCodes, returnCardElements('game-piece').length/2)))
 
 
