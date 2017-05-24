@@ -41,11 +41,17 @@ const pairAndShuffle = function(arr){
      }
  }
 
+/*
+match functionality uses a live nodelist populated by data-status="selected" elements
+when the list is greater than 2 the list is reset and the "3rd click" sets the click target's data-status="selected" and the process repeats
+matches are set to data-status="matched" and ignored by click event listener
+*/
 const matchCheck = function(clickTarget){
     let selectedPieces = document.querySelectorAll('[data-status="selected"]');
-    console.log(selectedPieces);
+
     if (selectedPieces.length < 2){
         return;
+
     } else if (selectedPieces.length === 2){
         if (selectedPieces[0].dataset.icon === selectedPieces[1].dataset.icon) {
             console.log("Match!");
@@ -55,7 +61,6 @@ const matchCheck = function(clickTarget){
         }
     } else if (selectedPieces.length > 2) {
         selectedPieces.forEach(function(element){
-            console.log(element);
             element.firstChild.style.visibility = "hidden";
             element.dataset.status = "unselected";
         });
@@ -63,3 +68,9 @@ const matchCheck = function(clickTarget){
         clickTarget.dataset.status = "selected";
     }
 }
+
+/*
+matchCheck can certainly be made dry-er
+should click on a selected gamePiece reset the board to all unselected? Good strategy dictates you flip the unknown card before coming back to the known,
+but current state FORCES that to be the next move, probably not ideal
+*/
