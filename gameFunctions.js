@@ -33,10 +33,23 @@ const pairAndShuffle = function(arr){
      if (start === elements.length){
          return null;
      } else {
+         elements[start].dataset.icon = contentArr[start];
+         elements[start].dataset.status = "unselected";
          elements[start].innerHTML = `<p>${contentArr[start]}</p>`;
          start++;
          printInnerHTML(elements, contentArr, start);
      }
  }
 
+const matchCheck = function(){
+    let selectedPieces = document.querySelectorAll('[data-status="selected"]')
+
+    if (selectedPieces.length < 2){
+        return
+    } else if (selectedPieces.length === 2) {
+        if (selectedPieces[0].dataset.icon === selectedPieces[1].dataset.icon){
+            alert("Match!");
+        }
+    } 
+}
 

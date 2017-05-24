@@ -11,16 +11,24 @@ body {
     flex-wrap: wrap;
     margin: 30px auto 5px auto;
     padding: none;
-    width: 80vw;
+    width: 88vw;
     background-color: #fff;
 }
 
 .game-piece {
     position: relative;
-    width: 25%;
+    width: 21.1%;
+    margin: 15px;
     text-align: center;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #000;
 }
 
 .game-piece:hover {
     background-color: grey;
+}
+
+.game-piece p{
+    visibility: hidden;
 }
