@@ -46,15 +46,19 @@ match functionality uses a live nodelist populated by data-status="selected" ele
 when the list is greater than 2 the list is reset and the "3rd click" sets the click target's data-status="selected" and the process repeats
 matches are set to data-status="matched" and ignored by click event listener
 */
-const matchCheck = function(clickTarget){
+const matchCheck = function(clickTarget, movesMadeTarget, matchesRemainingTarget){
     let selectedPieces = document.querySelectorAll('[data-status="selected"]');
-
+    let movesMade = parseInt(movesMadeTarget.textContent, 10);
+    movesMadeTarget.textContent = movesMade + 1;
+    console.log(movesMade);
     if (selectedPieces.length < 2){
         return;
 
     } else if (selectedPieces.length === 2){
         if (selectedPieces[0].dataset.icon === selectedPieces[1].dataset.icon) {
             console.log("Match!");
+            let mathesRemaining = parseInt(matchesRemainingTarget.textContent, 10);
+            matchesRemainingTarget.textContent = mathesRemaining - 1;
             selectedPieces.forEach(function(element){
                 element.dataset.status = "matched";
             })
