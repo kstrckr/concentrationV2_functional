@@ -5,11 +5,35 @@ body {
     width: 100%;
 }
 
+#score-board{
+    width: 80%;
+    margin: 10px auto 0 auto;
+    padding: 10px;
+    background: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#title{
+
+}
+
+#move-count{
+
+}
+
+#matches-remaing{
+
+}
+
+
+
 #game-board {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin: 30px auto 5px auto;
+    margin: 20px auto 5px auto;
     padding: none;
     width: 88vw;
     background-color: #fff;
