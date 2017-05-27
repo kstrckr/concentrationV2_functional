@@ -47,6 +47,9 @@ body {
 }
 
 .game-piece {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     position: relative;
     width: 21.1%;
     margin: 15px;
@@ -61,6 +64,7 @@ body {
 }
 
 .game-piece p{
+    width: 100%;
     margin: 10px auto;
     visibility: hidden;
 }
