@@ -3,6 +3,9 @@
 //returns the NodeList w/ the passed class name
 const returnCardElements = target => document.getElementsByClassName(target);
 
+//gets and initializes the "moves remaining" html text
+const initilizeMatchesRemaining = (target, num) => target.textContent = num;
+
 //generates a random number between 0 and a passed upper limit (num)
 const returnRandomNum = num => Math.floor(Math.random()*num);
 

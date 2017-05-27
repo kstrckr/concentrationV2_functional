@@ -3,6 +3,9 @@
 //returns the NodeList w/ the passed class name
 const gamePieces = returnCardElements('game-piece');
 
+//initialize MatchesRemaining number
+const initialMatchesRemaining = initilizeMatchesRemaining(document.getElementById("matchesRemainingNum"), gamePieces.length/2);
+
 //returns a randomly selected batch of icon unicodes
 const selectedIcons = returnRandomIcons(allCodes, gamePieces.length/2);
 

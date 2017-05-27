@@ -31,12 +31,19 @@ body {
 
 #game-board {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
+    flex-wrap: nowrap;
     margin: 20px auto 5px auto;
     padding: none;
     width: 88vw;
+    height: 75vh;
     background-color: #fff;
+}
+
+.game-board-row{
+    height: 25%;
+    display: flex;
+    flex-direction: row;
 }
 
 .game-piece {
@@ -54,5 +61,6 @@ body {
 }
 
 .game-piece p{
+    margin: 10px auto;
     visibility: hidden;
 }
