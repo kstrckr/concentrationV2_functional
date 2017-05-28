@@ -37,7 +37,7 @@ const pairAndShuffle = function(arr){
          return null;
      } else {
          elements[start].dataset.icon = contentArr[start];
-         elements[start].dataset.status = "unselected";
+         //elements[start].dataset.status = "unselected";
          elements[start].innerHTML = `<p>${contentArr[start]}</p>`;
          start++;
          printInnerHTML(elements, contentArr, start);

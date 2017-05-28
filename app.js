@@ -1,5 +1,8 @@
 "use strict";
 
+buildBoard("game-board", 6, 6);
+
+
 //returns the NodeList w/ the passed class name
 const gamePieces = returnCardElements('game-piece');
 
@@ -27,3 +30,4 @@ document.getElementById("game-board").addEventListener('click', function(e){
     }
     
 });
+
