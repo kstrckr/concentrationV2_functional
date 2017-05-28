@@ -1,6 +1,6 @@
 "use strict";
 
-buildBoard("game-board", 4, 4);
+buildBoard("game-board", 4, 4, "game-board-row");
 
 
 //returns the NodeList w/ the passed class name
