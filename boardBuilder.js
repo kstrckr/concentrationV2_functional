@@ -1,5 +1,15 @@
 "use strict";
-const gamePieceClassNames = ["game-piece", "fa", "fa-5x"];
+const gamePieceClassNames = () => {
+    let classTemplate = ["game-piece", "fa"];
+
+    if (window.innerWidth <= 800){
+        classTemplate.push("fa-2x")
+    } else {
+        classTemplate.push("fa-5x")
+    }
+
+    return classTemplate;
+}
 
 const addColumns = (target, width, classNames) => {
             if (width === 0){
@@ -28,7 +38,7 @@ const buildBoard = (parentId, width, height, rowClassName) => {
         let newRow = document.createElement("div");
         newRow.className = rowClassName;
 
-        addColumns(newRow, width, gamePieceClassNames);
+        addColumns(newRow, width, gamePieceClassNames());
         
         target.appendChild(newRow);
         buildRows(target, width, height -1, rowClassName);
