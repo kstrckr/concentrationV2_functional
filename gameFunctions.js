@@ -51,17 +51,17 @@ matches are set to data-status="matched" and ignored by click event listener
 */
 const matchCheck = function(clickTarget, movesMadeTarget, matchesRemainingTarget){
     let selectedPieces = document.querySelectorAll('[data-status="selected"]');
-    let movesMade = parseInt(movesMadeTarget.textContent, 10);
-    movesMadeTarget.textContent = movesMade + 1;
-    console.log(movesMade);
+    let movesMade = parseInt(movesMadeTarget.innerHTML, 10);
+    movesMadeTarget.innerHTML = movesMade + 1;
+    //console.log(movesMade);
     if (selectedPieces.length < 2){
         return;
 
     } else if (selectedPieces.length === 2){
         if (selectedPieces[0].dataset.icon === selectedPieces[1].dataset.icon) {
-            console.log("Match!");
-            let mathesRemaining = parseInt(matchesRemainingTarget.textContent, 10);
-            matchesRemainingTarget.textContent = mathesRemaining - 1;
+            //console.log("Match!");
+            let matchesRemaining = parseInt(matchesRemainingTarget.innerHTML, 10);
+            matchesRemainingTarget.innerHTML = matchesRemaining - 1;
             selectedPieces.forEach(function(element){
                 element.dataset.status = "matched";
             })
